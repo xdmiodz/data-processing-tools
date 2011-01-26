@@ -18,4 +18,7 @@ function plot_ne_profile(t, osc, fres, f0, points, title_string)
     set(h,'edgecolor','none');
     colorbar;
     title(title_string);
+    filename=sprintf("%s.eps",title_string);
+    xlabel('t, s'); ylabel('n_{e}, cm^{-3}');
+    print(filename, '-deps', '-color');
     
