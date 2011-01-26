@@ -1,5 +1,10 @@
 function [ne] = ne(fres, f0)
-    m = 9.109382e-28;
-    e = -4.803204e-10;
+%-----------------------------------------------
+%   [ne] = ne(fres,f0)
+%   calculates plasma density corresponded to response
+%   of an UHF-resonator based on double line. The 
+%   eigen-frequency of the resonator is f0.
+%   The density values are in cm^-3
+%------------------------------------------------
     fpe2 = (fres.^2 - f0^2);
     ne = fpe2/((5.64e4/(2*pi))^2);
