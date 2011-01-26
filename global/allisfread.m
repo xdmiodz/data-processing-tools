@@ -1,4 +1,4 @@
-function [T,A] = allisfread
+function [T,A] = allisfread()
 %------------------------------------------
 %   [T,A] = allisfread
 %   read all *.isf files in the current dir
