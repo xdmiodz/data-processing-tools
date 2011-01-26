@@ -1,0 +1,15 @@
+Tools used by waves data processing operations
+
+function [amp, pd, td] = phase_delay(rs, bs, t, fm, df, points)
+%----------------------------------------------------------------------------
+% pd:	calculate phase (pd) and time (td) delay between received signal (rs) and base signal (bs) 
+% also calculates the amplitude (amp) of the fm-fourirer component
+%
+% Input:
+% rs - set of received signals
+% bs - set of base signals
+% t  - set of time points
+% fm - the frequency of the fourier-harmonic under interest
+% df - maximum possible dispersion of the fm (the disperion can occur due time-
+% 	instability of a modulator)
+% points - numbers of the time points, where the useful signal is 

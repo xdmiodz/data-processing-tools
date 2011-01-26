@@ -1,4 +1,11 @@
-function [T,A] = allisfread;
+function [T,A] = allisfread
+%------------------------------------------
+%   [T,A] = allisfread
+%   read all *.isf files in the current dir
+%   file name format is TEKXXXXX.isf
+%   T  contains time points
+%   A contains contains signal data
+%------------------------------------------
 
 N=0;
 while 1

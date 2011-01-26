@@ -1,0 +1,18 @@
+Tools used by plasma desnity data proccesing operations, such as: calculate plasme density related to shifted eigenfrequncy of UHF resonator, normalize both maximum and noise level, print results into a file and etc.
+
+function [nenorm] = normne(ne, points)
+%----------------------------------------------
+%   [nenorm] = normne(ne)
+%   Normailize raw data gotten from plasma density 
+%   measurements. Reduce the maximum of each meauserements
+%   to 1, reduce signal level to mean noise level.
+%----------------------------------------------
+
+function [ne] = ne(fres, f0)
+%-----------------------------------------------
+%   [ne] = ne(fres,f0)
+%   calculates plasma density corresponded to response
+%   of an UHF-resonator based on double line. The non-shifted
+%   eigen-frequency of the resonator is f0.
+%   The density values are in cm^-3
+%------------------------------------------------
