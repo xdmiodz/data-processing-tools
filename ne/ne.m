@@ -1,4 +1,4 @@
-function [ne] = ne(fres, f0)
+function [ne] = ne0(fres, f0)
 %-----------------------------------------------
 %   [ne] = ne(fres,f0)
 %   calculates plasma density corresponded to response
