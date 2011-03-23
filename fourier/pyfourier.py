@@ -5,11 +5,11 @@ from numpy.fft import *
 def onesidefft(T,A):
     N=size(T,0)
     NP=size(T,1)
-    FFT = numpy.zeros((N,NP/2+1))
-    FREQ = numpy.zeros((N,NP/2+1))
+    FFT = numpy.zeros((N,NP/2))
+    FREQ = numpy.zeros((N,NP/2))
     for i in xrange(N):
         timestep=T[i,2]-T[i,1]
-        [FFTC, FREQC] = convfft( fft(A[i,:]), fftfreq(NP, d=timestep))
+        [FFTC, FREQC] = convfft( fft(A[i,:]-mean(A[i,:])), fftfreq(NP, d=timestep))
         
         FFT[i,:] = FFTC[:]
         FREQ[i,:] = FREQC[:]
@@ -20,9 +20,9 @@ def onesidefft(T,A):
 
 def convfft(FFT, FREQ):
     N=size(FFT,0)
-    FFTC = numpy.zeros((N/2+1))
-    FREQC = numpy.zeros((N/2+1))
+    FFTC = numpy.zeros((N/2))
+    FREQC = numpy.zeros((N/2))
     for i in xrange(N/2):
-        FFTC[i+1] = 0.5*(abs(FFT[i + 1])+abs(FFT[N-i-2]))
-        FREQC[i+1] = 0.5*(abs(FREQ[i + 1])+ abs(FREQ[N-i-2]))
+        FFTC[i] = 0.5*(abs(FFT[i])+abs(FFT[N-i-1]))
+        FREQC[i] = 0.5*(abs(FREQ[i])+ abs(FREQ[N-i-1]))
     return [FFTC, FREQC]
