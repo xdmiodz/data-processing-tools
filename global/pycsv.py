@@ -26,7 +26,7 @@ def readallcsv():
             A[i][j]=float(row[1])
             j = j + 1
         exit
-    return [T,L]
+    return [T,A]
     
         
         
