@@ -26,3 +26,11 @@ def convfft(FFT, FREQ):
         FFTC[i] = 0.5*(abs(FFT[i])+abs(FFT[N-i-1]))
         FREQC[i] = 0.5*(abs(FREQ[i])+ abs(FREQ[N-i-1]))
     return [FFTC, FREQC]
+
+def normfft(FFT,FREQ):
+     N=size(FFT,0)
+     NP=size(FFT,1)
+     for i in xrange(N):
+         for j in xrange(NP):
+             FFT[i,j]=FFT[i,j]/FREQ[i,j]
+     return [FFT, FREQ]
